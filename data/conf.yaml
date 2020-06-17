@@ -1,0 +1,15 @@
+MainService:
+  port: 3000
+Mqtt:
+  service: 192.168.123.33 
+  port: 1883 
+  user: xufu 
+  password: 0219xu521
+  tipc: mojing
+WanNianLi:
+  key: ddad3499380c2e2322149424ba49fb77
+Weather: 
+  key: 9e0244a6c24b3bc7fd9a3658ae6cb087
+TouTiao:
+  key: 7a21ae6f9a1a78c6b775833c5c5f60d9
+

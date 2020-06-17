@@ -1,0 +1,221 @@
+ body {
+            background-color: #000;
+            color: #fff;
+            font-family: 微软雅黑;
+        }
+
+        p {
+            margin: 0 0 0px;
+        }
+
+        /*这是左右布局样式*/
+        /*.div-a {
+            margin-top: 20px;
+            text-align: center
+        }
+
+        .div-a span {
+            font-size: 25px
+        }*/
+
+
+        .timestamp #time {
+            font-family: 微软雅黑;
+            font-size: 30px;
+            margin-top: 5%;
+            text-align: -webkit-center;
+            text-align: center;
+        }
+
+        .wandiv {
+            text-align: -webkit-center;
+            text-align: center;
+        }
+
+        .wandiv1 {
+            margin-left: 5%
+        }
+
+
+        .weathp {
+            font-size: 12px;
+            /*line-height: 21px;*/
+            margin: 2px 0;
+        }
+
+        .todayweather {
+            font-size: 14px;
+        }
+
+        #nongli {
+            font-size: 16px;
+        }
+
+        .weatherdiv {
+            border-right: 2px solid #ffffff;
+        }
+
+        .weatherdiv.none {
+            border-right: none;
+        }
+
+        .todayweatherspan {
+            font-size: 18px;
+        }
+
+        .todaywindspan {
+            display: block;
+            font-size: 16px;
+            /*padding-left: 65px;*/
+            margin-top: 5px;
+        }
+
+        .todaywindspan1 {
+            display: block;
+            font-size: 16px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .todaywdiv {
+            padding-left: 65px;
+            margin-top: -15px;
+        }
+
+        .todayweatherspanval {
+            border: 1px solid #ffffff;
+            padding: 0px 1px;
+            border-radius: 5px;
+        }
+
+        .row {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wanspanval {
+            font-size: 16px;
+        }
+
+        .rigthtext {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .carousel-caption {
+            background: #000000;
+            opacity: 0.6;
+        }
+
+        /* 定义keyframe动画，命名为blink */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* 添加兼容性前缀 */
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-ms-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-o-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* 定义blink类*/
+        .blink {
+            color: #ffffff;
+            animation: blink 1s linear infinite;
+            /* 其它浏览器兼容性前缀 */
+            -webkit-animation: blink 1s linear infinite;
+            -moz-animation: blink 1s linear infinite;
+            -ms-animation: blink 1s linear infinite;
+            -o-animation: blink 1s linear infinite;
+        }
+        /* 定义blink类*/
+        #hello.blink {
+            color: #ffffff;
+            animation: blink 5s linear infinite;
+            /* 其它浏览器兼容性前缀 */
+            -webkit-animation: blink 5s linear infinite;
+            -moz-animation: blink 5s linear infinite;
+            -ms-animation: blink 5s linear infinite;
+            -o-animation: blink 5s linear infinite;
+        }
+
+        #iframe1 {
+            height: 410px;
+            width: 100%;
+            scroll: no;
+            border: 0px;
+        }
+        #myCarousel .item {
+            height: 450px;
+            width: 100%;
+        }
+        #myCarouse2 .item {
+            height: 450px;
+            width: 100%;
+        }
+        .row .col-lg-12,.row .col-xs-12,.row .col-md-12,.row .col-sm-12{
+            padding: 0px;
+            margin: 0px;
+        }
+        .pan{
+            border: 1px solid #ffffff;
+            padding: 0px 1px;
+            border-radius: 5px;
+        }
+        .liuyan{
+            font-size: 16px;
+        }
+        .dtitle{
+            height: 28px;
+        }
+        #dclean{
+            display: inline-block;
+            border: 1px solid #ffffff;
+            padding: 0px 1px;
+            border-radius: 5px;
+            position: absolute;
+            right: 15px;
+        }
+        #lclean{
+             display: inline-block;
+            border: 1px solid #ffffff;
+            padding: 0px 1px;
+            border-radius: 5px;
+            position: absolute;
+            right: 15px;
+        }

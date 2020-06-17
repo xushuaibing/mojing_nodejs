@@ -1,0 +1,547 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer"/>
+    <title>你好主人</title>
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/css/Chart.min.css" type="text/css" rel="stylesheet">
+    <script src="/js/jquery.min1.9.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/HZRecorder.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/Chart.min.js" charset="utf-8"></script>
+    <link href="/css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="row">
+        <div class="timestamp col-lg-6 col-xs-6 col-md-6 col-sm-6">
+            <div id="time"></div>
+            <div id="nongli"></div>
+            <canvas id="myChart"></canvas>
+            <canvas id="myChart2"></canvas>
+        </div>
+        <div class='weather col-lg-6 col-xs-6 col-md-6 col-sm-6' id="t_w_div"></div>
+    </div>
+    <div class="row">
+        <div class="liuyan col-lg-6 col-xs-6 col-md-6 col-sm-6">
+            <div class="dtitle">待办事项：<span id = "dclean">清空</span></div>
+            <div class="pan" id="daiban"></div>
+        </div>
+        <div class="liuyan col-lg-6 col-xs-6 col-md-6 col-sm-6">
+            <div class="dtitle">留言板：<span id = "lclean">清空</span></div>
+            <div class="pan" id="liuyan"></div>
+        </div>
+    </div>
+    <br/>
+    <div>
+        <center><h1 id="hello" class="blink">^V^</h1><br><br></center>
+    </div>
+    <br/>
+    <div id="pictureDiv">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                        <center>
+                            <div id="myCarouse2" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <a href="#myCarouse2" data-slide="prev" class="carousel-control left"><!--‹-->
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a><!--左箭头-->
+                                    <a href="#myCarouse2" data-slide="next" class="carousel-control right">
+                                    <!--›--><span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a><!--右箭头-->
+                                    <div class='item active'>
+                                        <a href='javascript:void(0)'>
+                                            <img src='/picture/1.jpg' alt='' width='100%'/>
+                                        </a>
+                                    </div>
+                                    <div class='item'>
+                                        <a href='javascript:void(0)'>
+                                            <img src='/picture/2.jpg' alt='' width='100%'/>
+                                        </a>
+                                    </div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/3.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/4.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/5.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/6.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/7.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/8.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/9.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <div class='item'><a href='javascript:void(0)'><img src='/picture/10.jpg' alt=''
+                                                                                        width='100%'/></a></div>
+                                    <ol class="carousel-indicators">
+                                        <li data-target='#myCarouse2' data-slide-to='0' class='active'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='1'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='2'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='3'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='4'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='5'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='6'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='7'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='8'></li>
+                                        <li data-target='#myCarouse2' data-slide-to='9'></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toutiaoDiv">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                        <center>
+                            <div id="myCarousel" class="carousel slide">
+                                <div class="carousel-inner" id="carouseldiv"><a href="#myCarousel" data-slide="prev"
+                                                                                class="carousel-control left"><!--‹--><span
+                                        class="glyphicon glyphicon-chevron-left"></span></a><!--左箭头--><a href="#myCarousel"
+                                                                                                         data-slide="next"
+                                                                                                         class="carousel-control right">
+                                    <!--›--><span class="glyphicon glyphicon-chevron-right"></span></a><!--右箭头-->
+                                    <ol class="carousel-indicators" id="ol"></ol>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div id="videoDiv">
+        <div id="videoTitle" width="100%" style="text-align: center;font-size: 22px"></div>
+        <video id="vid" autoplay="autoplay" width="100%" controls="controls">
+            <source src="" type="video/mp4"/>
+        </video>
+    </div>
+    <div id="audioDiv">
+        <div id="audioTitle" width="100%" style="text-align: center;font-size: 22px"></div>
+        <audio id="audioId" autoplay="autoplay" controls="controls">
+            <source src="" type="audio/mp3"/>
+        </audio>
+    </div>
+    <div id="iframeDiv">
+        <div id="iframeTitle" width="100%" style="text-align: center;font-size: 22px"></div>
+        <iframe src="" id="iframe1"></iframe>
+    </div>
+    <footer style="height: 30px"></footer>
+    <script type="text/javascript" src="/js/weather.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/date.js" charset="utf-8"></script><!--按钮初始化状态-->
+    <script type="text/javascript">
+        $(function () {
+            getweather();
+            getwannianli();
+            hideOther('pictureDiv');
+            $('#myCarouse2').carousel({interval: 5000,});
+            todayVideo();
+            wenhou();
+            showDaiBan();
+            addDaiBan("待办事项10");
+            //deleteDaiBan(2);
+            addLiuYan("zheshi一个留言test123../好了");
+            showLiuYan();
+        });
+        var hidediv = ['videoDiv', 'iframeDiv', 'toutiaoDiv', 'pictureDiv', 'audioDiv'];
+        var autoPlayNum = -1;
+        var videoList = [];
+        function hideOther(div) {
+            hidediv.forEach(function (item) {
+                if (item != div) {
+                    $("#" + item).hide()
+                } else {
+                    $("#" + item).show()
+                }
+            })
+        }
+        function getLocalTime(nS) {
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ')
+        }
+        function newsdetail(url, title) {
+            $("#iframeTitle").html(title);
+            $("#iframe1").attr("src", url);
+            hideOther('iframeDiv')
+        }
+
+        function playerVideo(src, title) {
+            $("#videoTitle").html(title);
+            var vid = document.getElementById("vid");
+            var typestr = src.split("/");
+            var typestrs = typestr.length - 1;
+            var typetemp = typestr[typestrs];
+            var type = typetemp.split(".")[1];
+            if (type == "mp4") {
+                vid.type = "/video/mp4"
+            } else if (type == "webm") {
+                vid.type = "/video/webm"
+            } else if (type == "ogg") {
+                vid.type = "/video/ogg"
+            } else {
+                vid.type = ""
+            }
+            vid.src = src;
+            vid.muted = false;
+            setTimeout(vid.play(), 2000);
+            hideOther('videoDiv')
+        }
+
+        function playerAudio(src, title) {
+            $("#audioTitle").html(title);
+            var vid = document.getElementById("audioId");
+            var typestr = src.split("/");
+            var typestrs = typestr.length - 1;
+            var typetemp = typestr[typestrs];
+            var type = typetemp.split(".")[1];
+            if (type == "ogg") {
+                vid.type = "/audio/ogg"
+            } else if (type == "mp3") {
+                vid.type = "/audio/mp3"
+            } else if (type == "wav") {
+                vid.type = "/audio/wav"
+            } else {
+                vid.type = ""
+            }
+            vid.src = src;
+            vid.muted = false;
+            vid.play();
+            hideOther('audioDiv')
+        }
+
+        $("#vid").get(0).addEventListener("ended", function () {
+            if (videoList != undefined && videoList != null) {
+                if (autoPlayNum > videoList.length - 1) {
+                    autoPlayNum = -1
+                }
+            }
+            if (autoPlayNum == -1) {
+                hideOther('pictureDiv')
+            } else {
+                if (videoList[autoPlayNum] != undefined && videoList[autoPlayNum] != null) {
+                    playerVideo(videoList[autoPlayNum].playUrl, videoList[autoPlayNum].title);
+                    autoPlayNum++
+                }
+            }
+        }, false);
+        $("#audioId").get(0).addEventListener("ended", function () {
+            hideOther('pictureDiv')
+        }, false);
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        function ip() {
+            var host = "";
+            $.ajax({
+                url: "/ipAddress", success: function (data) {
+                    host = data;
+                }
+            });
+            return host
+        }
+        var serverIp = ip();
+        const socket = io.connect("http://" + serverIp);
+        socket.on("sendToClient", message => {
+            if (message != null) {
+                if (Object.keys(message)[0] == "news") {
+                    newsdetail(message.news, "")
+                } else if (Object.keys(message)[0] == "video") {
+                    playerVideo(message.video, "")
+                } else if (Object.keys(message)[0] == "audio") {
+                    playerAudio(message.audio, "")
+                } else if (Object.keys(message)[0] == "toutiao") {
+                    toutiao(message.toutiao)
+                } else if (Object.keys(message)[0] == "autovideo") {
+                    autoPlayTodayVideo()
+                } else if (Object.keys(message)[0] == "nextvideo") {
+                    nextVideo()
+                } else if (Object.keys(message)[0] == "backvideo") {
+                    backVideo()
+                } else if (Object.keys(message)[0] == "daiban") {
+                    addDaiBan(message.daiban)
+                } else if (Object.keys(message)[0] == "liuyan") {
+                    addLiuYan(message.liuyan)
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        function todayVideo() {
+            $.ajax({
+                url: "https://api.apiopen.top/todayVideo", data: {"type": ""}, success: function (data) {
+                    if (data != null && data.code == 200) {
+                        var json = data.result;
+                        var i = 0;
+                        json.forEach(function (temp) {
+                            if (temp.type == "autoPlayFollowCard" || temp.type == "followCard") {
+                                var content = temp.data.content;
+                                if (content.type == "video") {
+                                    var videotemp = content.data;
+                                    var videoTitle = "";
+                                    if (content.data.title != null && content.data.title != "") {
+                                        videoTitle = content.data.title
+                                    } else {
+                                        videoTitle = content.data.description
+                                    }
+                                    var videoPlayUrl = content.data.playUrl;
+                                    var map = {};
+                                    map.title = videoTitle;
+                                    map.playUrl = videoPlayUrl;
+                                    videoList[i] = map;
+                                    i++
+                                }
+                            }
+                        })
+                    }
+                }
+            })
+        }
+        function addDaiBan(test) {
+            $.ajax({
+                url: "/addDaiBan", data: {"daiban": test}, success: function (data) {
+                    showDaiBan();
+                }
+            })
+        }
+        function deleteDaiBan(no) {
+                $.ajax({
+                    url:"/deleteDaiBan",
+                    data:{"no":no},
+                    success:function (data) {
+                        showDaiBan();
+                    }
+                });
+        }
+        $("#dclean").click(function () {
+            $.ajax({
+                url:"/deleteAllDaiBan",
+                success:function (data) {
+                    showDaiBan();
+                }
+            });
+        });
+        function showDaiBan() {
+            $.ajax({
+                url: "/showDaiBan", success: function (data) {
+                    zhanshi(data,"daiban");
+                }
+            })
+        }
+        function addLiuYan(test) {
+            $.ajax({
+                url: "/addLiuYan", data: {"liuyan": test}, success: function (data) {
+                    showLiuYan();
+                }
+            })
+        }
+        function deleteLiuYan(no) {
+            $.ajax({
+                url:"/deleteLiuYan",
+                data:{"no":no},
+                success:function (data) {
+                    showLiuYan();
+                }
+            });
+        }
+        $("#lclean").click(function () {
+            $.ajax({
+                url:"/deleteAllLiuYan",
+                success:function (data) {
+                    showLiuYan();
+                }
+            });
+        });
+        function showLiuYan() {
+            $.ajax({
+                url: "/showLiuYan", success: function (data) {
+                    zhanshi(data,"liuyan");
+                }
+            })
+        }
+        function zhanshi(data,id) {
+            $("#"+id).html("");
+            var f = "";
+            if(id == "daiban"){
+                f = "deleteDaiBan";
+            }
+            if(id == "liuyan"){
+                f = "deleteLiuYan";
+            }
+            data = JSON.parse(data);
+            data.data.forEach(function (temp) {
+                var htm = "<div onclick = '"+f+"("+temp.no+")"+"' >"+temp.text+"</div>";
+                $("#"+id).append(htm);
+            })
+        }
+        function liuyan(str) {
+            if (str != null) {
+                var t = typeof str;
+                $("#liuyan").html("");
+                if (t != "string") {
+                    str.forEach(function (temp) {
+                        $("#liuyan").append(temp + "<br/>")
+                    })
+                } else {
+                    $("#liuyan").append(str + "<br/>")
+                }
+            }
+        }
+
+        function playListVideo() {
+            if (videoList[autoPlayNum] != undefined && videoList[autoPlayNum] != null) {
+                playerVideo(videoList[autoPlayNum].playUrl, videoList[autoPlayNum].title);
+                autoPlayNum++
+            }
+        }
+
+        function autoPlayTodayVideo() {
+            autoPlayNum = 0;
+            playListVideo()
+        }
+
+        function nextVideo() {
+            playListVideo()
+        }
+
+        function backVideo() {
+            autoPlayNum = autoPlayNum - 2;
+            if (autoPlayNum == -1) {
+                autoPlayNum = 0
+            }
+            playListVideo()
+        }
+
+        function wenhou() {
+            $.ajax({
+                url: "/wenhou", success: function (data) {
+                    $("#hello").html(data)
+                }
+            })
+        }
+
+        function toutiao(type) {
+            var l = 0;
+            $.ajax({
+                url: "/toutiao", data: {"type": type}, success: function (data) {
+                    var json = JSON.parse(data);
+                    if (json != undefined && json.result.stat == 1) {
+                        var olhtml = "";
+                        var toutiaohtml = "";
+                        l = json.result.data.length;
+                        for (var i = 0; i < json.result.data.length; i++) {
+                            if (i == 0) {
+                                olhtml += "<li data-target='#myCarousel' data-slide-to ='0' class='active' ></li>";
+                                toutiaohtml += "<div class='item active'><a href='javascript:void(0)' onClick='newsdetail(\"" + json.result.data[i].url + "\")'><img src='" + json.result.data[i].thumbnail_pic_s + "' alt='" + json.result.data[i].author_name + "' width='100%'/><div class='carousel-caption'><h3>" + json.result.data[i].title + "</h3><h5>" + json.result.data[i].date + "</h5></div></a></div>"
+                            } else {
+                                olhtml += "<li data-target='#myCarousel' data-slide-to ='" + i + "' ></li>";
+                                toutiaohtml += "<div class='item'><a href='javascript:void(0)' onClick='newsdetail(\"" + json.result.data[i].url + "\")'><img src='" + json.result.data[i].thumbnail_pic_s + "' alt='" + json.result.data[i].author_name + "' width='100%'/><div class='carousel-caption'><h3>" + json.result.data[i].title + "</h3><h5>" + json.result.data[i].date + "</h5></div></a></div>"
+                            }
+                        }
+                        $("#ol").html(olhtml);
+                        $("#carouseldiv").append(toutiaohtml)
+                    }
+                    $('#myCarousel').carousel({interval: 5000,});
+                    hideOther('toutiaoDiv');
+                    closeToutiao(5000 * l)
+                }
+            })
+        }
+
+        function closeToutiao(time) {
+            console.log(time);
+            setTimeout(function () {
+                hideOther('pictureDiv')
+            }, time)
+        }
+
+        var laber = new Array();
+        var lineMinData = new Array();
+        var lineMaxData = new Array();
+        var wlaber = new Array();
+        var wlineMinData = new Array();
+        var wlineMaxData = new Array();
+
+        function zhexian() {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            ctx.canvas.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: laber,
+                    datasets: [{
+                        label: '最低气温',
+                        fontColor: '#ffffff',
+                        data: lineMinData,
+                        backgroundColor: ['rgba(54, 162, 235, 0.3)'],
+                        borderColor: ['rgba(54, 162, 235, 1)'],
+                        pointBackgroundColor: "rgba(220,220,220,1)",
+                        pointHighlightStroke: "rgba(220,220,220,1)"
+                    }, {
+                        label: '最高气温',
+                        fontColor: '#ffffff',
+                        data: lineMaxData,
+                        backgroundColor: ['rgba(238, 0, 0, 0.3)'],
+                        borderColor: ['rgba(238, 0, 0, 1)'],
+                        pointBackgroundColor: "rgba(220,220,220,1)",
+                        pointHighlightStroke: "rgba(220,220,220,1)"
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    hover: {mode: 'nearest', intersect: true},
+                    scales: {
+                        xAxes: [{
+                            gridLines: {color: 'rgba(220, 220, 220, 0.5)', zeroLineColor: '#666666'},
+                            ticks: {fontColor: '#ffffff', beginAtZero: true}
+                        }],
+                        yAxes: [{
+                            gridLines: {color: 'rgba(220, 220, 220, 0.5)', zeroLineColor: '#ffffff'},
+                            ticks: {fontColor: '#ffffff', beginAtZero: true}
+                        }],
+                        scaleGridLineColor: "rgba(0,0,0,.05)"
+                    }
+                }
+            });
+            var ctx2 = document.getElementById('myChart2').getContext('2d');
+            ctx2.canvas.height = 150;
+            var myChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: wlaber,
+                    datasets: [{
+                        label: '降雨概率',
+                        data: wlineMaxData,
+                        backgroundColor: ['rgba(135, 206, 250, 0.2)'],
+                        borderColor: ['rgba(54, 162, 235, 1)'],
+                        pointBackgroundColor: "rgba(220,220,220,1)"
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    hover: {mode: 'nearest', intersect: true},
+                    scales: {
+                        xAxes: [{
+                            gridLines: {color: 'rgba(220, 220, 220, 0.5)', zeroLineColor: '#ffffff'},
+                            ticks: {fontColor: '#ffffff', beginAtZero: true}
+                        }],
+                        yAxes: [{
+                            gridLines: {color: 'rgba(220, 220, 220, 0.5)', zeroLineColor: '#ffffff'},
+                            ticks: {fontColor: '#ffffff', beginAtZero: true}
+                        }],
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>
