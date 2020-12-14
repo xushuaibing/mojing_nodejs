@@ -1,7 +1,7 @@
 MainService:
   port: 3000
 Mqtt:
-  service: 192.168.123.33 
+  service: 192.168.123.189 
   port: 1883 
   user: xufu 
   password: 0219xu521
