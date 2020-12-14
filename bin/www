@@ -42,7 +42,7 @@ var client  = mqtt.connect('mqtt://'+conf.Mqtt.service+':'+conf.Mqtt.port+'',{
         clientId: a});
 
 client.on('connect', function () {
-  console.log("连接mqtt服务器");
+  console.log("已连接mqtt服务器");
   client.subscribe(conf.Mqtt.tipc);  
 });
 

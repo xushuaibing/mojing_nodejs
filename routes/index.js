@@ -134,7 +134,7 @@ router.get('/ipAddress', function(req, res,next) {
 
 router.get('/wenhou', function(req, res,next) { 
   var wenHouStr = '哈哈哈哈哈哈哈哈哈^v^';
-  var jsonfile = fs.readFileSync('../data/wenhou.json').toString();
+  var jsonfile = fs.readFileSync('./data/wenhou.json').toString();
   jsonfile = JSON.parse(jsonfile);
   var wenHouDate = jsonfile.date;
   wenHouDate.forEach(function(data){
@@ -155,7 +155,7 @@ router.get('/wenhou', function(req, res,next) {
 
 router.get('/addDaiBan', function(req, res,next) { 
     var daiban = req.query.daiban;
-    fs.readFile('../data/daiban.json',function(err,data){
+    fs.readFile('./data/daiban.json',function(err,data){
         if(err){
                 return console.error(err);
             }
@@ -165,7 +165,7 @@ router.get('/addDaiBan', function(req, res,next) {
         person.data.push(params);//将传来的对象push进数组对象中
         person.total = person.data.length;//定义一下总条数，为以后的分页打基础
         var pstr = JSON.stringify(person);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
-            fs.writeFile('../data/daiban.json',pstr,function(err){
+            fs.writeFile('./data/daiban.json',pstr,function(err){
                 if(err){
                     console.error(err);
                 }
@@ -178,7 +178,7 @@ router.get('/addDaiBan', function(req, res,next) {
 
 router.get('/deleteDaiBan', function(req, res,next) {
     var no = req.query.no;
-    fs.readFile('../data/daiban.json',function(err,data){
+    fs.readFile('./data/daiban.json',function(err,data){
         if(err){
             return console.error(err);
         }
@@ -193,7 +193,7 @@ router.get('/deleteDaiBan', function(req, res,next) {
         }
         person.total = person.data.length;//定义一下总条数，为以后的分页打基础
         var pstr = JSON.stringify(person);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
-        fs.writeFile('../data/daiban.json',pstr,function(err){
+        fs.writeFile('./data/daiban.json',pstr,function(err){
             if(err){
                 console.error(err);
             }
@@ -205,7 +205,7 @@ router.get('/deleteDaiBan', function(req, res,next) {
 });
 
 router.get('/deleteAllDaiBan', function(req, res,next) {
-    fs.readFile('../data/daiban.json',function(err,data){
+    fs.readFile('./data/daiban.json',function(err,data){
         if(err){
             return console.error(err);
         }
@@ -214,7 +214,7 @@ router.get('/deleteAllDaiBan', function(req, res,next) {
         person.data.splice(0);
         person.total = person.data.length;//定义一下总条数，为以后的分页打基础
         var pstr = JSON.stringify(person);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
-        fs.writeFile('../data/daiban.json',pstr,function(err){
+        fs.writeFile('./data/daiban.json',pstr,function(err){
             if(err){
                 console.error(err);
             }
@@ -227,14 +227,14 @@ router.get('/deleteAllDaiBan', function(req, res,next) {
 
 router.get('/showDaiBan', function(req, res,next) {
 
-    var person = fs.readFileSync('../data/daiban.json').toString();
+    var person = fs.readFileSync('./data/daiban.json').toString();
 
     res.end(person);
 });
 
 router.get('/addLiuYan', function(req, res,next) {
     var liuyan = req.query.liuyan;
-    fs.readFile('../data/liuyan.json',function(err,data){
+    fs.readFile('./data/liuyan.json',function(err,data){
         if(err){
             return console.error(err);
         }
@@ -244,7 +244,7 @@ router.get('/addLiuYan', function(req, res,next) {
         person.data.push(params);//将传来的对象push进数组对象中
         person.total = person.data.length;//定义一下总条数，为以后的分页打基础
         var pstr = JSON.stringify(person);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
-        fs.writeFile('../data/liuyan.json',pstr,function(err){
+        fs.writeFile('./data/liuyan.json',pstr,function(err){
             if(err){
                 console.error(err);
             }
@@ -257,7 +257,7 @@ router.get('/addLiuYan', function(req, res,next) {
 
 router.get('/deleteLiuYan', function(req, res,next) {
     var no = req.query.no;
-    fs.readFile('../data/liuyan.json',function(err,data){
+    fs.readFile('./data/liuyan.json',function(err,data){
         if(err){
             return console.error(err);
         }
@@ -272,7 +272,7 @@ router.get('/deleteLiuYan', function(req, res,next) {
         }
         person.total = person.data.length;//定义一下总条数，为以后的分页打基础
         var pstr = JSON.stringify(person);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
-        fs.writeFile('../data/liuyan.json',pstr,function(err){
+        fs.writeFile('./data/liuyan.json',pstr,function(err){
             if(err){
                 console.error(err);
             }
@@ -284,7 +284,7 @@ router.get('/deleteLiuYan', function(req, res,next) {
 });
 
 router.get('/deleteAllLiuYan', function(req, res,next) {
-    fs.readFile('../data/liuyan.json',function(err,data){
+    fs.readFile('./data/liuyan.json',function(err,data){
         if(err){
             return console.error(err);
         }
@@ -293,7 +293,7 @@ router.get('/deleteAllLiuYan', function(req, res,next) {
         person.data.splice(0);
         person.total = person.data.length;//定义一下总条数，为以后的分页打基础
         var pstr = JSON.stringify(person);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
-        fs.writeFile('../data/liuyan.json',pstr,function(err){
+        fs.writeFile('./data/liuyan.json',pstr,function(err){
             if(err){
                 console.error(err);
             }
@@ -306,7 +306,7 @@ router.get('/deleteAllLiuYan', function(req, res,next) {
 
 router.get('/showLiuYan', function(req, res,next) {
 
-    var person = fs.readFileSync('../data/liuyan.json').toString();
+    var person = fs.readFileSync('./data/liuyan.json').toString();
 
     res.end(person);
 });
