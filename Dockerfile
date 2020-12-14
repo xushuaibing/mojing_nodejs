@@ -1,5 +1,6 @@
 #制定node镜像的版本
-FROM node:10.16.3-alpine
+ARG NODE_VERSION=8
+FROM  arm64v8/node:${NODE_VERSION}-alpine
 #声明作者
 MAINTAINER xugeno1
 #移动当前目录下面的文件到app目录下
